@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Go Version](https://img.shields.io/github/go-mod/go-version/Shikogoru/lyricfetcher)](go.mod)
 
-**LyricFetcher** is a fast, robust, cross-platform tool available as both a high-efficiency **CLI** and an intuitive **Graphical User Interface (GUI)**. It automatically downloads synchronized and plain lyrics (`.lrc`) from [LRCLIB](https://lrclib.net) and [NetEase Cloud Music](https://music.163.com) for your local audio files. It is designed to effortlessly prepare lyrics for self-hosted music streaming servers like **Navidrome**, **Feishin**, and **Symfonium**.
+**LyricFetcher** is a fast, robust, cross-platform tool available as both a high-efficiency **CLI** and an intuitive **Graphical User Interface (GUI)**. It automatically downloads synchronized and plain lyrics (`.lrc`) from [LRCLIB](https://lrclib.net) and [NetEase Cloud Music](https://music.163.com) for your local audio files. It is designed to effortlessly prepare lyrics for self-hosted music streaming servers like Navidrome
 
 ---
 ## Features
@@ -36,15 +36,15 @@
                  │
                  ▼
        [2. Check Local Cache] ──(Hit)──> Write .lrc file
-                 │ (Miss)
+                 │ 
                  ▼
        [3. Query LRCLIB API] ──(Found)──> Cache & Write .lrc
-                 │ (Not Found)
+                 │ 
                  ▼
      [4. Query NetEase Fallback] ──(Found)──> Cache & Write .lrc
-                 │ (Not Found)
+                 │ 
                  ▼
-          Log [Not Found]
+          Log 
 ```
 
 ---
@@ -52,32 +52,7 @@
 ## Installation
 
 ### Recommended: Pre-Built Binaries
-Most users do **not** need to install Go or GCC. Simply download the ready-to-run executable for your operating system from the [GitHub Releases](https://github.com/Shikogoru/lyricfetcher/releases) page:
-- **GUI (Graphical Interface)**:
-  - Windows: `lyricfetcher-gui-windows-amd64.exe` (includes embedded CJK Noto Sans fonts)
-- **CLI (Command Line)**:
-  - Windows: `lyricfetcher-windows-amd64.exe` or `windows-arm64.exe`
-  - Linux: `lyricfetcher-linux-amd64` or `linux-arm64`
-  - macOS: `lyricfetcher-darwin-amd64` or `darwin-arm64`
-
-### Build from Source
-If you prefer to compile from source:
-- **CLI Only (Pure Go, no CGO or GCC required)**:
-  ```bash
-  git clone https://github.com/Shikogoru/lyricfetcher.git
-  cd lyricfetcher
-  go build -o bin/lyricfetcher ./cmd/cli
-  ```
-- **GUI Application (Requires CGO & GCC)**:
-  Building the Fyne GUI from source requires `CGO_ENABLED=1` and a working C compiler (e.g. GCC via [w64devkit](https://github.com/skeeto/w64devkit) or MinGW-w64 on Windows; `gcc` / `clang` on Linux/macOS):
-  ```bash
-  # Windows PowerShell:
-  .\build.ps1 -Target build
-
-  # Linux / macOS:
-  make build
-  ```
-
+Most users do **not** need to install Go or GCC. Simply download the ready-to-run executable for your operating system from the [GitHub Releases](https://github.com/Shikogoru/lyricfetcher/releases) 
 ---
 ## Navidrome & Media Server Compatibility
 
@@ -94,4 +69,8 @@ Compatible clients include:
 See [Navidrome Workflow Guide](examples/navidrome-workflow.md) for detailed setup.
 
 ---
+⚠️ Disclaimer
+**NetEase Cloud Music** is an unofficial, reverse-engineered API used as a fallback source. This feature is provided for **personal and educational use only**. We do not host any copyrighted lyrics. Please respect the Terms of Service of NetEase and support the official platforms. The developers of LyricFetcher are not responsible for any misuse or account bans resulting from the use of this feature!
 
+⚠️ 免责声明
+**网易云音乐** 是一个非官方的逆向工程 API，仅作为备用歌词源使用。此功能仅供 **个人和学习目的** 使用。我们不托管任何受版权保护的歌词。请遵守网易的服务条款并支持官方平台。LyricFetcher 的开发者不对因使用此功能而导致的任何滥用或账户封禁负责。

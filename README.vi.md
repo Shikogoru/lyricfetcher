@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Go Version](https://img.shields.io/github/go-mod/go-version/Shikogoru/lyricfetcher)](go.mod)
 
-**LyricFetcher** là công cụ mạnh mẽ, đa nền tảng với cả hai chế độ: dòng lệnh (**CLI**) hiệu năng cao và giao diện đồ họa (**GUI**) trực quan, tự động tải lời bài hát đồng bộ (`.lrc`) từ [LRCLIB](https://lrclib.net) và [NetEase Cloud Music](https://music.163.com) cho kho nhạc cá nhân của bạn. Ứng dụng được thiết kế tối ưu cho các máy chủ phát nhạc như **Navidrome**, **Feishin** và **Symfonium**.
+**LyricFetcher** là công cụ mạnh mẽ, đa nền tảng với cả hai chế độ: dòng lệnh (**CLI**) hiệu năng cao và giao diện đồ họa (**GUI**) trực quan, tự động tải lời bài hát đồng bộ (`.lrc`) từ [LRCLIB](https://lrclib.net) và [NetEase Cloud Music](https://music.163.com) cho kho nhạc cá nhân của bạn. Ứng dụng được thiết kế tối ưu cho các máy chủ phát nhạc như Navidrome
 
 ---
 ## Tính năng nổi bật
@@ -56,31 +56,8 @@
 ### Khuyến nghị: Bản build sẵn (Pre-Built Binaries)
 Đa số người dùng **không cần** cài đặt Go hay GCC. Bạn chỉ cần tải file thực thi sẵn sàng sử dụng từ trang [GitHub Releases](https://github.com/Shikogoru/lyricfetcher/releases):
 - **Bản GUI (Giao diện đồ họa trực quan)**:
-  - Windows: `lyricfetcher-gui-windows-amd64.exe` (đã nhúng sẵn bộ font Google Noto Sans & Noto Sans CJK SC hiển thị chuẩn Tiếng Trung/Nhật/Hàn)
-- **Bản CLI (Dòng lệnh)**:
-  - Windows: `lyricfetcher-windows-amd64.exe` hoặc `windows-arm64.exe`
-  - Linux: `lyricfetcher-linux-amd64` hoặc `linux-arm64`
-  - macOS: `lyricfetcher-darwin-amd64` hoặc `darwin-arm64`
+  - Windows: `tải từ Releases` 
 
-### Biên dịch từ mã nguồn
-Nếu bạn muốn tự biên dịch:
-- **Chỉ bản CLI (Pure Go, không yêu cầu CGO hay GCC)**:
-  ```bash
-  git clone https://github.com/Shikogoru/lyricfetcher.git
-  cd lyricfetcher
-  go build -o bin/lyricfetcher ./cmd/cli
-  ```
-- **Bản GUI (Yêu cầu CGO & GCC)**:
-  Biên dịch giao diện Fyne yêu cầu bật `CGO_ENABLED=1` và cài đặt trình biên dịch C (GCC qua [w64devkit](https://github.com/skeeto/w64devkit) hoặc MinGW-w64 trên Windows; `gcc` / `clang` trên Linux/macOS):
-  ```bash
-  # Trên Windows PowerShell:
-  .\build.ps1 -Target build
-
-  # Trên Linux / macOS:
-  make build
-  ```
-
----
 
 ## Tương thích với Navidrome và các ứng dụng nghe nhạc
 
@@ -97,4 +74,6 @@ Tương thích tốt với:
 Xem thêm [Hướng dẫn tích hợp Navidrome](examples/navidrome-workflow.md).
 
 ---
+⚠️ Tuyên bố miễn trừ trách nhiệm
+**NetEase Cloud Music** là một API không chính thức, được sử dụng làm nguồn dự phòng. Tính năng này chỉ dành cho **mục đích cá nhân và học tập**. Chúng tôi không lưu trữ bất kỳ lời bài hát có bản quyền nào. Vui lòng tôn trọng Điều khoản Dịch vụ của NetEase và ủng hộ các nền tảng chính thức. Nhà phát triển LyricFetcher không chịu trách nhiệm cho bất kỳ hành vi sử dụng sai mục đích hoặc bị khóa tài khoản nào do sử dụng tính năng này!
 
