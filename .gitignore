@@ -1,0 +1,44 @@
+# Binaries and build artifacts
+bin/
+dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Logs and runtime files
+*.log
+lyricfetcher.log
+/fonts/
+cache.json
+*.cache
+coverage.txt
+
+# Media and audio test files
+*.mp3
+*.flac
+*.m4a
+*.ogg
+*.opus
+*.wav
+*.lrc
+test_audio/
+test_audio_*/
+test_out_*
+test_w*
+output.txt
+
+# Python / Scripts
+__pycache__/
+*.pyc
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor and IDE configurations
+.idea/
+.vscode/
+*.swp
+*~
