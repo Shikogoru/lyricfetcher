@@ -1,4 +1,4 @@
-[English](README.md) | [Tiếng Việt](README.vi.md) | [中文](README.zh.md)
+[English](README.md) | [Tiếng Việt](README.vi.md) |
 
 # LyricFetcher
 
@@ -9,27 +9,6 @@
 **LyricFetcher** is a fast, robust, cross-platform tool available as both a high-efficiency **CLI** and an intuitive **Graphical User Interface (GUI)**. It automatically downloads synchronized and plain lyrics (`.lrc`) from [LRCLIB](https://lrclib.net) and [NetEase Cloud Music](https://music.163.com) for your local audio files. It is designed to effortlessly prepare lyrics for self-hosted music streaming servers like **Navidrome**, **Feishin**, and **Symfonium**.
 
 ---
-
-## Graphical User Interface (GUI)
-
-LyricFetcher includes an official graphical interface built with [Fyne](https://fyne.io):
-
-- **Folder Selection**: Intuitive directory picker and path input.
-- **Collapsible Options**: Easily toggle overwrite, strict matching, NetEase fallback, and concurrent worker slider (1-16).
-- **Real-Time Progress & Statistics**: Responsive progress bar, current file indicator, and live count badges for Found, Not Found, Skipped, and Errors.
-- **Start / Stop Controls**: Safely start or interrupt batch processing anytime.
-- **Instant Language Switching**: Toggle between English, Tiếng Việt, and 中文 seamlessly from the top-right menu.
-- **One-Click Folder Access**: Open the target music library folder directly upon completion.
-
-To launch the GUI:
-```bash
-./bin/lyricfetcher-gui
-# On Windows:
-.\bin\lyricfetcher-gui.exe
-```
-
----
-
 ## Features
 
 - **Multi-Format Metadata Extraction**: Reads embedded tags from MP3 (ID3v2), FLAC (Vorbis Comment), and M4A/MP4 audio containers.
@@ -45,25 +24,9 @@ To launch the GUI:
   - Instantly skips existing `.lrc` files without overhead on repeated runs.
 - **Native i18n Support**: Full interactive and CLI output in English (`en`), Vietnamese (`vi`), and Chinese (`zh`).
 - **Realtime TTY Progress & Clean Logs**: Interactive progress bar in terminals (`\r`) and non-interleaved atomic blocks in redirection/CI modes.
-
 ---
 
-## Quick Start
-
-```bash
-# Fetch lyrics for a single track
-lyricfetcher "01. Drive By.mp3"
-
-# Scan an entire music collection with 4 concurrent workers
-lyricfetcher "/path/to/Music"
-
-# Dry run simulation in Vietnamese
-lyricfetcher --lang vi --dry-run "/path/to/Music"
-```
-
----
-
-## How It Works
+## How It Works?
 
 ```text
   Local Audio File (mp3 / flac / m4a)
@@ -116,60 +79,6 @@ If you prefer to compile from source:
   ```
 
 ---
-
-## CLI Options
-
-| Category | Flag | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **General** | `--lang` | `auto` | Language: `en`, `vi`, `zh`, `auto` |
-| | `--version` | `false` | Print version information and exit |
-| | `--help` | `false` | Display help screen with examples |
-| **Processing** | `--workers` | `4` | Number of concurrent workers (1 - 16) |
-| | `--strict` | `false` | Require high-confidence metadata match (+/- 2s duration) |
-| | `--no-netease` | `false` | Disable NetEase fallback provider |
-| | `--netease-spoof-ip` | `false` | Enable NetEase IP spoofing header |
-| | `--netease-spoof-ip-value` | `118.89.204.198` | IP value sent in NetEase `X-Real-IP` header |
-| **Output** | `--output-dir` | `""` | Directory to save `.lrc` files (default: beside audio files) |
-| | `--overwrite` | `false` | Overwrite existing `.lrc` files |
-| | `--dry-run` | `false` | Simulate execution without modifying or creating files |
-| | `--log-file` | `lyricfetcher.log` | Destination path for detailed ISO 8601 log file |
-| **Cache** | `--no-cache` | `false` | Disable reading and writing persistent cache |
-| | `--clear-cache` | `false` | Empty persistent cache before processing |
-
----
-
-## Examples
-
-### 1. Single Track Fetching
-```bash
-lyricfetcher "California 37/01. Drive By.mp3"
-```
-
-### 2. Fast Directory Batch with 8 Workers
-```bash
-lyricfetcher --workers 8 "/media/music"
-```
-
-### 3. Strict Match for High-Fidelity Libraries
-Ensure that lyrics strictly match the duration of your audio file within ±2 seconds:
-```bash
-lyricfetcher --strict "/media/music"
-```
-
-### 4. Separate Output Directory
-Save all lyrics into a centralized directory:
-```bash
-lyricfetcher --output-dir "/media/lyrics" "/media/music"
-```
-
-### 5. Overwrite and Clear Cache
-Force re-downloading fresh lyrics across your entire library:
-```bash
-lyricfetcher --clear-cache --overwrite "/media/music"
-```
-
----
-
 ## Navidrome & Media Server Compatibility
 
 LyricFetcher generates standard `.lrc` sidecar files in the format `<track-name>.lrc` alongside your audio files.
